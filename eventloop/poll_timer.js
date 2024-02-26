@@ -21,3 +21,4 @@ someAsyncOperation(() => {
     // do nothing
   }
 });
+

@@ -1,2 +1,8 @@
 - Explain the order of execution in terms of the event loop for eventloop/immediate.js.
 - Will the order of execution change if timeout is changed to 0? Why or why not?
+
+The fs.readFile callback begins execution once the file read operation is complete.
+The blocking operation occurs, lasting for about 10 milliseconds.
+Error checking and data logging happen immediately after the blocking operation.
+The setImmediate callback is likely to execute next, logging that it was scheduled to run immediately.
+Finally, the setTimeout callback executes, logging the delay since it was scheduled, which should be slightly more than 5 milliseconds due to the timing of its scheduling and the event loop's operation.

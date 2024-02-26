@@ -1,1 +1,5 @@
 - In eventloop/timer.js, what will be the order of execution? Briefly explain the order of execution w.r.t the event loop phases.
+When foo(2) is called, "foo" is immediately logged to the console due to the direct call to console.log('foo').
+The setTimeout function with a delay of 0 milliseconds places the bar(a) function call into the Web APIs environment to be executed after the timeout.
+Immediately after setting the timeout, baz() is called, logging "baz" to the console.
+The event loop then takes each callback from the task queue and executes them in order, logging "2 : bar" followed by "1 : bar" to the console.

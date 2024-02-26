@@ -11,4 +11,3 @@ const foo = (a) => {
 
 foo(2);
 foo(1);
-

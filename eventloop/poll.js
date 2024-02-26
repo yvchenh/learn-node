@@ -14,3 +14,4 @@ function foo() {
 someAsyncOperation();
 foo();
 console.log('done');
+ 

@@ -1,3 +1,8 @@
 - Explain the order of execution in terms of the event loop for eventloop/poll_timer.js.
 - Will the order of execution change if the delay in the while loop is changed from 10s to 150s? Why or why not?
 - Will the order of execution change if timeout is changed to 0? Why or why not?
+
+A setTimeout callback is scheduled to execute after 100 milliseconds. 
+The function someAsyncOperation is called, which begins an asynchronous file read operation.
+Node.js's event loop handles different types of tasks in specific phases. 
+The setTimeout callback is set to execute after 100ms. However, its execution can only occur after the event loop reaches the timers phase and the timer has completed its countdown.
